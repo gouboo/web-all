@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    项目上下文配置为/,所有路径都写为绝对路径-->
+<!--    <base href="/demo05/">-->
+</head>
+<body>
+
+<!--
+客户端解析src属性中的路径，通过借助url来判定
+当前资源请求路径：http://localhost:8080/demo05/index.html
+当前资源文件是：index.html
+当前资源所在路径：http://localhost:8080/demo05/
+相对路径规则：当前资源所在路径+目标资源即：http://localhost:8080/demo05/ + static/img/logo.jpg
+
+1.相对路径：以当前资源的所在路径为出发点，去找目标资源
+语法：不以/开头，./表示当前资源的路径，../表示上一层路径
+2.绝对路径：以/开头，/表示根路径，不同的项目中出发点不一样
+绝对路径要补充项目的上下文，项目上下文是可以改变的。
+通过head标签下面的base的href属性，定义相对路径的公共前缀，通过公共前缀，把一个相对路径转换为绝对路径
+
+
+-->
+<img src="/static/img/logo.jpg"/>
+<img src="/static/img/logo.jpg">
+</body>
+</html>
