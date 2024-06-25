@@ -1,5 +1,6 @@
 package com.atguigu.schedule.dao.impl;
 
+import com.atguigu.schedule.dao.BaseDAO;
 import com.atguigu.schedule.dao.SysUserDao;
 
 /**
@@ -11,5 +12,5 @@ import com.atguigu.schedule.dao.SysUserDao;
  * @Create: 2024/6/23 14:03
  * @Version: 1.0
  */
-public class SysUserDaoImpl implements SysUserDao{
+public class SysUserDaoImpl extends BaseDAO implements SysUserDao {
 }

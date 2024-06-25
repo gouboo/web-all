@@ -2,6 +2,8 @@ package com.atguigu.schedule.dao;
 
 import com.atguigu.schedule.pojo.SysSchedule;
 
+import java.util.List;
+
 /**
  * ClassName: SysScheduleDao
  * Package: com.atguigu.schedule.dao
@@ -19,4 +21,11 @@ public interface SysScheduleDao {
      * @return 返回影响数据行数，0表示增加失败，大于0表示成功
      */
     int addSchedule(SysSchedule schedule);
+
+    /**
+     * 查询所有日程记录
+     *
+     * @return 返回所有日程记录
+     */
+    List<SysSchedule> findAll();
 }

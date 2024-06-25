@@ -9,7 +9,7 @@ import java.io.Serializable;
 /**
  * ClassName: SysSchedule
  * Package: com.atguigu.schedule.pojo
- * Description: sys_schedulel库实体类
+ * Description: sys_schedule库实体类
  *
  * @Author: bushG
  * @Create: 2024/6/23 13:53

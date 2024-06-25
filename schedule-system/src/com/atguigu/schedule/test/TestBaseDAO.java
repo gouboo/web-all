@@ -2,6 +2,7 @@ package com.atguigu.schedule.test;
 
 import com.atguigu.schedule.dao.BaseDAO;
 import com.atguigu.schedule.dao.SysUserDao;
+import com.atguigu.schedule.pojo.SysUser;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -26,20 +27,28 @@ public class TestBaseDAO {
     }
 
     @Test
-    public void testQueryExecute() {
-        String sql = "select count(*) from sys_user";
+    public void testExecuteQuery() {
+        String sql = "select uid, username, user_pwd userPwd from sys_user";
         try {
-            Long l = baseDao.executeQueryBean(Long.class, sql);
-            System.out.println(l);
+            List<SysUser> sysUser = baseDao.executeQuery(SysUser.class, sql);
+            sysUser.forEach(System.out::println);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     @Test
-    public void test1() throws Exception {
-
-        Field asdf = SysUserDao.class.getDeclaredField("asdf");
+    public void testExecuteQueryBean() throws Exception {
+        String sql = "select count(*) from sys_user";
+        Long l = baseDao.executeQueryBean(Long.class, sql);
+        System.out.println(l);
+    }
+    
+    @Test
+    public void testExecuteUpdate() throws Exception {
+        String sql = "insert into sys_schedule values(default,?,?,?)";
+        int i = baseDao.executeUpdate(sql, 1, "学习java", 0);
+        System.out.println(i);
     }
 }
 
