@@ -38,9 +38,20 @@ public class TestBaseDAO {
     }
 
     @Test
-    public void testExecuteQueryBean() throws Exception {
+    public void testExecuteQueryBean() {
+        String sql = "select uid, username, user_pwd userPwd from sys_user where username=?";
+        try {
+            List<SysUser> sysUser = baseDao.executeQuery(SysUser.class, sql, "zhangsan");
+            sysUser.forEach(System.out::println);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    public void testExecuteQuerySingleRowClo() throws Exception {
         String sql = "select count(*) from sys_user";
-        Long l = baseDao.executeQueryBean(Long.class, sql);
+        Long l = baseDao.executeQuerySingleRowClo(Long.class, sql);
         System.out.println(l);
     }
     
